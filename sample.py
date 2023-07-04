@@ -4,4 +4,4 @@ A = np.ones(3)
 A = A*4
 print(A)
 A = A*3
-A = A*5
+A = A*4
