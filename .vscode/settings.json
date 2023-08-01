@@ -1,7 +1,31 @@
 {
-    "python.testing.pytestArgs": [
-        "src"
-    ],
-    "python.testing.unittestEnabled": false,
-    "python.testing.pytestEnabled": true
+  "python.testing.unittestEnabled": false,
+  "python.testing.pytestEnabled": true,
+  // ファイル保存時にテスト対象を自動的に探索
+  "python.testing.autoTestDiscoverOnSaveEnabled": true,
+  // pytest実行時の引数設定を追加
+  // --cov: カバレッジ計測の有効化
+  // --cov-report xml: カバレッジ計測レポートをxml形式(coverage.xml)で出力
+  "python.testing.pytestArgs": [
+    "--cov=src",
+    "--cov-report",
+    "xml"
+  ],
+  // エディタ上のカバレッジ表示設定
+  // ガター(ブレークポイント等が表示される場所)でのカバレッジ表示有無(default: true)
+  "coverage-gutters.showGutterCoverage": true,
+  // エディタ行でのカバレッジ表示有無(default: false)
+  "coverage-gutters.showLineCoverage": true,
+  // ルーラーでのカバレッジ表示有無(default: false)
+  "coverage-gutters.showRulerCoverage": true,
+  // Formatter(black)とLinter(flake8)の設定
+  "editor.formatOnSave": true,
+  "python.linting.enabled": true,
+  "python.linting.lintOnSave": true,
+  "python.linting.pylintEnabled": false,
+  "python.linting.flake8Enabled": true,
+  "python.linting.flake8Args": [
+    "--config=${workspaceFolder}/.flake8"
+  ],
+  "python.formatting.provider": "black",
 }
