@@ -2,6 +2,7 @@ import pytest
 
 import test_01
 
+
 class TestCal(object):
     @classmethod
     def setup_class(cls):
@@ -21,12 +22,12 @@ class TestCal(object):
 
     def test_add_num_and_double(self):
         assert self.cal.add_num_and_double(1, 1) == 4
-    
+
     def test_add_num_and_double_raise(self):
         with pytest.raises(ValueError):
             self.cal.add_num_and_double("1", 1)
 
-    @pytest.mark.skipif(True, reason="skip!")        
+    @pytest.mark.skipif(True, reason="skip!")
     def test_add_num_and_double_raise2(self):
         with pytest.raises(ValueError):
             self.cal.add_num_and_double("1", "1")
